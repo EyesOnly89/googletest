@@ -1,0 +1,20 @@
+project "GoogleTest"
+	kind "StaticLib"
+	language "C"
+	staticruntime "Off"
+	runtime "Release"
+	symbols "On"
+	
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"googletest/src/gtest-all.cc",
+	}
+
+	includedirs
+	{
+		"googletest/include",
+		"googletest"
+	}
